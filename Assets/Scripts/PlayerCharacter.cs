@@ -18,6 +18,6 @@ public class PlayerCharacter : MonoBehaviour {
         }
         //This is the syntax for printing to the console!
         //Debug.Log("Test!");
-        
+        //Comment
 	}
 }
