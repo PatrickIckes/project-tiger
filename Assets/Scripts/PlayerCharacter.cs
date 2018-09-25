@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
+    int movementSpeed = 5;
+
     public Rigidbody2D myRigidBody;
 	// Use this for initialization
 	void Start () {
@@ -14,7 +16,7 @@ public class PlayerCharacter : MonoBehaviour {
         if (Input.GetKey(KeyCode.D))
         {
             //TODO: Move the character to the right
-            myRigidBody.velocity = new Vector2(5, myRigidBody.velocity.y);
+            myRigidBody.velocity = new Vector2(movementSpeed, myRigidBody.velocity.y);
         }
         //This is the syntax for printing to the console!
         //Debug.Log("Test!");
