@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
-    int movementSpeed = 5;
+    float movementSpeed = 5;
 
     public Rigidbody2D myRigidBody;
 	// Use this for initialization
