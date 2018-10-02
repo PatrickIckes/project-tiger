@@ -11,22 +11,23 @@ public class PlayerCharacter : MonoBehaviour {
     private float horizontalInput;
 
     [SerializeField]
+    private float jumpForce = 10;
+
+    [SerializeField]
     private float accelerationforce = 5;
 
     [SerializeField]
-    private float maxSpeed = 5;
-
-
-    // Use this for initialization
-    void Start ()
-    {
-
-	}
+    private float maxSpeed = 5; 
 
     // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
     }
 
     private void FixedUpdate()
