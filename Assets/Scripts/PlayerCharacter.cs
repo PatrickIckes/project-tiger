@@ -11,6 +11,7 @@ public class PlayerCharacter : MonoBehaviour {
 
     [SerializeField]
     private float moveInput;
+    private float moveInputJump;
 
     // Use this for initialization
     void Start () {
@@ -36,11 +37,13 @@ public class PlayerCharacter : MonoBehaviour {
     private void Jump()
     {
         //TODO: Make the character jump
-
+        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, moveInputJump * movementSpeed);
     }
 
     private void GetMovementInput()
     {
         moveInput = Input.GetAxis("Horizontal");
+        moveInputJump = Input.GetAxis("Vertical");
+
     }
 }
