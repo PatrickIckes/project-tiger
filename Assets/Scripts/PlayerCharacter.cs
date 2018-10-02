@@ -9,7 +9,11 @@ public class PlayerCharacter : MonoBehaviour {
 
     [SerializeField]
     private float horizontalInput;
+
+    [SerializeField]
     private float accelerationforce = 5;
+
+    [SerializeField]
     private float maxSpeed = 5;
 
 
