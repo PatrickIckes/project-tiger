@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 567462956}
   - component: {fileID: 567462959}
   - component: {fileID: 567462960}
+  - component: {fileID: 567462961}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -329,7 +330,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &567462957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -397,7 +398,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 567462955}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4aa783294a4f644580e8521ebf645b3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -426,9 +427,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 567462956}
-  horizontalInput: 0
-  accelerationforce: 20
+  groundDetectTrigger: {fileID: 567462961}
+  jumpForce: 10
+  accelerationforce: 40
   maxSpeed: 5
+  groundContactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!58 &567462961
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567462955}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.21}
+  serializedVersion: 2
+  m_Radius: 0.37
 --- !u!1001 &649062155
 Prefab:
   m_ObjectHideFlags: 0
@@ -468,6 +499,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1719767198352908, guid: ddc831b10e41d1b4592d9a1e6c78905c, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddc831b10e41d1b4592d9a1e6c78905c, type: 2}
   m_IsPrefabParent: 0
@@ -482,7 +517,7 @@ GameObject:
   - component: {fileID: 1188112605}
   - component: {fileID: 1188112607}
   - component: {fileID: 1188112608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,6 +675,10 @@ Prefab:
         type: 2}
       propertyPath: m_Simulated
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332433332165614, guid: 0cb5e868e86414a479847be1881336ff, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cb5e868e86414a479847be1881336ff, type: 2}
