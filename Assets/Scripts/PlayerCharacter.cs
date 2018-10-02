@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
-    [SerializeField]
-    private float movementSpeed = 5;
 
     [SerializeField]
-    private Rigidbody2D myRigidBody;
+    private Rigidbody2D rb2d;
 
     [SerializeField]
-    private float moveInput;
-    private float moveInputJump;
+    private float horizontalInput;
+    private float accelerationforce = 5;
+    private float maxSpeed = 5;
+
 
     // Use this for initialization
-    void Start () {
-        Debug.Log("This is start!");
+    void Start ()
+    {
+
 	}
 
     // Update is called once per frame
     void Update()
     {
-        GetMovementInput();
+        horizontalInput = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
@@ -31,19 +32,15 @@ public class PlayerCharacter : MonoBehaviour {
 
     private void Move()
     {
-        myRigidBody.velocity = new Vector2(moveInput * movementSpeed, myRigidBody.velocity.y);
+        rb2d.AddForce(Vector2.right * horizontalInput * accelerationforce);
+        Vector2 clampedVelocity = rb2d.velocity;
+        clampedVelocity.x = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
+        rb2d.velocity = clampedVelocity;
     }
 
     private void Jump()
     {
         //TODO: Make the character jump
-        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, moveInputJump * movementSpeed);
-    }
-
-    private void GetMovementInput()
-    {
-        moveInput = Input.GetAxis("Horizontal");
-        moveInputJump = Input.GetAxis("Vertical");
-
+        
     }
 }
