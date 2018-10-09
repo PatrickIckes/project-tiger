@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class PlayerCharacter : MonoBehaviour {
     [SerializeField]
     private Collider2D groundDetectTrigger;
 
+    private Checkpoint currentCheckpoint;
     private float horizontalInput;
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
@@ -82,10 +84,18 @@ public class PlayerCharacter : MonoBehaviour {
         clampedVelocity.x = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = clampedVelocity;
     }
-
-    private void Jump()
+    public void Respawn()
     {
-        //TODO: Make the character jump
-        
+        if(currentCheckpoint == null)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        else
+        {
+            rb2d.velocity = Vector2.zero;
+            transform.position = currentCheckpoint.transform.position;
+        }
+    }
+    public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
+    {
+        currentCheckpoint = newCurrentCheckpoint;
     }
 }
