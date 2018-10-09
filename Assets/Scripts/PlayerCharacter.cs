@@ -8,6 +8,12 @@ public class PlayerCharacter : MonoBehaviour {
     private Rigidbody2D rb2d;
 
     [SerializeField]
+    private Collider2D playerGroundCollider;
+
+    [SerializeField]
+    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
+
+    [SerializeField]
     private Collider2D groundDetectTrigger;
 
     private float horizontalInput;
@@ -32,20 +38,36 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
+        
+    }
+    private void FixedUpdate()
+    {
+        UpdatePhysicsMaterial();
+        Move();
+
     }
 
+    private void UpdatePhysicsMaterial()
+    {
+        if(Mathf.Abs(horizontalInput) > 0)
+        {
+            playerGroundCollider.sharedMaterial = playerMovingPhysicsMaterial;
+        }
+        else
+        {
+            playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
+        }
+    }
     private void UpdateIsOnGround()
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
         // Debug.Log("IsOnGround?: " + isOnGround);
 
     }
-
     private void UpdateHorizontalInput()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
     }
-
     private void HandleJumpInput()
     {
         if (Input.GetButtonDown("Jump") & isOnGround)
@@ -53,12 +75,6 @@ public class PlayerCharacter : MonoBehaviour {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-
-    private void FixedUpdate()
-    {
-        Move();
-    }
-
     private void Move()
     {
         rb2d.AddForce(Vector2.right * horizontalInput * accelerationforce);
