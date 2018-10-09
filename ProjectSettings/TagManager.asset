@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -38,6 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hazards
+    uniqueID: 49468779
+    locked: 0
+  - name: Platforms
+    uniqueID: 468894431
+    locked: 0
+  - name: Checkpoints
+    uniqueID: 2902300575
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
