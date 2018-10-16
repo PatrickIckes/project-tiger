@@ -80,6 +80,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inactivatedRotationSpeed: 100
   activatedRotationSpeed: 300
+  inactivatedScale: 1
+  activatedScale: 1.5
+  inactivatedColor: {r: 1, g: 0, b: 0.78170156, a: 1}
+  activatedColor: {r: 0, g: 1, b: 0.5551176, a: 1}
 --- !u!212 &212158725100155822
 SpriteRenderer:
   m_ObjectHideFlags: 1

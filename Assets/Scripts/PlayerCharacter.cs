@@ -46,7 +46,6 @@ public class PlayerCharacter : MonoBehaviour {
     {
         UpdatePhysicsMaterial();
         Move();
-
     }
 
     private void UpdatePhysicsMaterial()
