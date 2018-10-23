@@ -39,15 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Hazards
+  - name: Background
     uniqueID: 49468779
-    locked: 0
-  - name: Platforms
-    uniqueID: 468894431
-    locked: 0
-  - name: Checkpoints
-    uniqueID: 2902300575
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 779691593
+    locked: 0
+  - name: Foreground
+    uniqueID: 468894431
     locked: 0
