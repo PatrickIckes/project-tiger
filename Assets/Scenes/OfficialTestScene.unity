@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 633266546}
   - component: {fileID: 633266548}
   - component: {fileID: 633266549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,6 +1011,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
+        type: 2}
+      propertyPath: groundContactFilter.useTriggers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
+        type: 2}
+      propertyPath: groundContactFilter.useNormalAngle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
