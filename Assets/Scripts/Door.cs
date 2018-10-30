@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
 
+    [SerializedField]
+    private string sceneToLoad;
+
     private bool isPlayerInTrigger;
 
     // Bug: Triggers door twice due to double colliders on Player
@@ -39,7 +42,7 @@ public class Door : MonoBehaviour {
         if (Input.GetButtonDown("Activate") && isPlayerInTrigger)
         {
             Debug.Log("Player activated door");
-            SceneManager.LoadScene("Test2");
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
