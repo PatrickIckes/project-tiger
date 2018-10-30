@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
 
-    [SerializedField]
+    [SerializeField]
     private string sceneToLoad;
 
     private bool isPlayerInTrigger;
