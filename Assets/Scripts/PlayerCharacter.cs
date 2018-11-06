@@ -21,6 +21,7 @@ public class PlayerCharacter : MonoBehaviour {
     private float horizontalInput;
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
+    bool facingRight = true;
 
     [SerializeField]
     private float jumpForce = 10;
@@ -40,7 +41,12 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
-        
+
+        if (horizontalInput > 0 && facingRight)
+            Flip();
+        else if (horizontalInput < 0 && facingRight)
+            Flip();
+
     }
     private void FixedUpdate()
     {
@@ -82,6 +88,13 @@ public class PlayerCharacter : MonoBehaviour {
         Vector2 clampedVelocity = rb2d.velocity;
         clampedVelocity.x = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = clampedVelocity;
+    }
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
     public void Respawn()
     {

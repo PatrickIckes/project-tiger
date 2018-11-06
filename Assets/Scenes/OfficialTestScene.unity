@@ -1180,11 +1180,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.26
+      value: -8.22
       objectReference: {fileID: 0}
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.78
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1223,7 +1223,7 @@ Prefab:
     - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
         type: 2}
       propertyPath: jumpForce
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 50078736930539244, guid: e9deba1f14ff0514c9b562c43eb05fe2,
         type: 2}
@@ -1472,6 +1472,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0037909194, y: -0.003791011}
   m_Size: {x: 0.18241814, y: 0.29758197}
   m_Direction: 0
+--- !u!95 &1797386401
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797386393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61c8070fad611914684045a40af2bcc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1986612428
 Prefab:
   m_ObjectHideFlags: 0
