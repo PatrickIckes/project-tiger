@@ -20,7 +20,7 @@ public class PlayerCharacter : MonoBehaviour {
     private Checkpoint currentCheckpoint;
     private float horizontalInput;
     private bool isOnGround;
-    private Collider2D[] groundHitDetectionResults = new Collider2D[16];
+    private Collider2D[] groundHitDetectionResults = new Collider2D[32];
 
     [SerializeField]
     private float jumpForce = 10;
