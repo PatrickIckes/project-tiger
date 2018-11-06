@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Checkpoints
+    uniqueID: 4009971775
+    locked: 0
   - name: Player
     uniqueID: 779691593
     locked: 0
