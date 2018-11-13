@@ -42,11 +42,10 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateHorizontalInput();
         HandleJumpInput();
 
-        if (horizontalInput > 0 && facingRight)
+        if (horizontalInput > 0 && !facingRight)
             Flip();
         else if (horizontalInput < 0 && facingRight)
             Flip();
-
     }
     private void FixedUpdate()
     {
