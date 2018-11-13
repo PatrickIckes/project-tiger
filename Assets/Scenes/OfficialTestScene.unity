@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -118,34 +118,29 @@ Transform:
   m_PrefabParentObject: {fileID: 4164833637392640, guid: 85723505cf03a00418d0832c4eb6add3,
     type: 2}
   m_PrefabInternal: {fileID: 2111296505}
---- !u!1 &82932092
+--- !u!1 &123381567 stripped
 GameObject:
+  m_PrefabParentObject: {fileID: 1051897060965276, guid: 2fc6bcd10faa3924d9e9a71a4dce041a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1986612428}
+--- !u!95 &123381568
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 82932093}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &82932093
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 82932092}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.017, y: -0.115, z: -0.004644264}
-  m_LocalScale: {x: 0.23778592, y: 0.23778631, z: 0.23778631}
-  m_Children: []
-  m_Father: {fileID: 1797386399}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 123381567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &504599478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1187,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.28
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1217,61 +1212,6 @@ Prefab:
     - target: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: groundContactFilter.useTriggers
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: groundContactFilter.useNormalAngle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: jumpForce
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 50078736930539244, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 58004382008688154, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58004382008688154, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.057386216
-      objectReference: {fileID: 0}
-    - target: {fileID: 61676077995452230, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.0034104362
-      objectReference: {fileID: 0}
-    - target: {fileID: 61676077995452230, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.28313857
-      objectReference: {fileID: 0}
-    - target: {fileID: 61676077995452230, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: playerGroundCollider
-      value: 
-      objectReference: {fileID: 1797386400}
-    - target: {fileID: 114110029828996964, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-        type: 2}
-      propertyPath: whatIsGround.m_Bits
-      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9deba1f14ff0514c9b562c43eb05fe2, type: 2}
@@ -1465,49 +1405,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &1797386393 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1905633699981002, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1646346577}
---- !u!4 &1797386399 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4069334558105274, guid: e9deba1f14ff0514c9b562c43eb05fe2,
-    type: 2}
-  m_PrefabInternal: {fileID: 1646346577}
---- !u!70 &1797386400
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1797386393}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0037909194, y: -0.003791011}
-  m_Size: {x: 0.18241814, y: 0.29758197}
-  m_Direction: 0
---- !u!95 &1797386401
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1797386393}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 61c8070fad611914684045a40af2bcc1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1986612428
 Prefab:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 61676077995452230}
   - component: {fileID: 114110029828996964}
   - component: {fileID: 58004382008688154}
+  - component: {fileID: 70744660970618976}
+  - component: {fileID: 95409560610638894}
   m_Layer: 0
   m_Name: Player Character
   m_TagString: Player
@@ -38,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905633699981002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.22, y: 0.06, z: 0}
+  m_LocalPosition: {x: -8.22, y: -0.28, z: 0}
   m_LocalScale: {x: 4.2054634, y: 4.2054563, z: 4.2054563}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,22 +78,22 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015760198, y: -0.11683804}
+  m_Offset: {x: 0.015760198, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.05865063
+  m_Radius: 0.057386216
 --- !u!61 &61676077995452230
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905633699981002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00038520992, y: -0.0016587824}
+  m_Offset: {x: -0.00038520992, y: 0.0034104362}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -102,8 +104,41 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1901314, y: 0.293277}
+  m_Size: {x: 0.1901314, y: 0.28313857}
   m_EdgeRadius: 0
+--- !u!70 &70744660970618976
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905633699981002}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0037909194, y: -0.003791011}
+  m_Size: {x: 0.18241814, y: 0.29758197}
+  m_Direction: 0
+--- !u!95 &95409560610638894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905633699981002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61c8070fad611914684045a40af2bcc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114110029828996964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,13 +151,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 50078736930539244}
-  playerGroundCollider: {fileID: 61676077995452230}
+  playerGroundCollider: {fileID: 70744660970618976}
   playerMovingPhysicsMaterial: {fileID: 6200000, guid: 71fc3b04a8f93c74cb86c85151d0f58f,
     type: 2}
   playerStoppingPhysicsMaterial: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0,
     type: 2}
   groundDetectTrigger: {fileID: 58004382008688154}
-  jumpForce: 10
+  jumpForce: 13
   accelerationforce: 40
   maxSpeed: 5
   groundContactFilter:
@@ -130,7 +165,7 @@ MonoBehaviour:
     useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
-    useNormalAngle: 0
+    useNormalAngle: 1
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
@@ -172,7 +207,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 779691593
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bfd50b3fb321eb645940f01f7d32d3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
