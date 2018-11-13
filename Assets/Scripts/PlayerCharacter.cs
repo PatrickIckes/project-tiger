@@ -23,6 +23,12 @@ public class PlayerCharacter : MonoBehaviour {
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
 
+    Animator anim;
+    bool grounded = false;
+    //public Transform groundCheck;
+    //float groundRadius = 0.2f;
+    //public LayerMask whatIsGround;
+
     [SerializeField]
     private float jumpForce = 10;
 
@@ -35,6 +41,11 @@ public class PlayerCharacter : MonoBehaviour {
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -46,11 +57,23 @@ public class PlayerCharacter : MonoBehaviour {
             Flip();
         else if (horizontalInput < 0 && facingRight)
             Flip();
+
+        anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
+
+        if(isOnGround && Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool("Ground", false);
+        }
     }
     private void FixedUpdate()
     {
         UpdatePhysicsMaterial();
         Move();
+
+        //grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        anim.SetBool("Ground", isOnGround);
+
+        anim.SetFloat("vSpeed", rb2d.velocity.y);
     }
 
     private void UpdatePhysicsMaterial()
@@ -80,6 +103,8 @@ public class PlayerCharacter : MonoBehaviour {
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+
     }
     private void Move()
     {
