@@ -48,6 +48,9 @@ TagManager:
   - name: Checkpoints
     uniqueID: 4009971775
     locked: 0
+  - name: Collectables
+    uniqueID: 2899019329
+    locked: 0
   - name: Player
     uniqueID: 779691593
     locked: 0
