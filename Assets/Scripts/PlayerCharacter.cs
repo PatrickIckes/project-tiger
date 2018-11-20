@@ -22,6 +22,7 @@ public class PlayerCharacter : MonoBehaviour {
     private bool isOnGround;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
+    private int scoreCount;
 
     Animator anim;
     bool grounded = false;
@@ -44,6 +45,7 @@ public class PlayerCharacter : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        scoreCount = 0;
     }
 
     // Update is called once per frame
@@ -144,6 +146,7 @@ public class PlayerCharacter : MonoBehaviour {
         if (other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.SetActive(false);
+            scoreCount = scoreCount + 1;
         }
     }
 }
