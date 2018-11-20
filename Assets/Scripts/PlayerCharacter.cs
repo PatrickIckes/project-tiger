@@ -138,4 +138,12 @@ public class PlayerCharacter : MonoBehaviour {
         currentCheckpoint = newCurrentCheckpoint;
         currentCheckpoint.SetIsActivated(true);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Collectable"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
