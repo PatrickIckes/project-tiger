@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - Collectable
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,9 @@ TagManager:
     locked: 0
   - name: Collectables
     uniqueID: 2899019329
+    locked: 0
+  - name: Door
+    uniqueID: 3323875249
     locked: 0
   - name: Player
     uniqueID: 779691593
