@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Hazard : MonoBehaviour {
-
+public class Hazard : MonoBehaviour
+{
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -12,7 +12,8 @@ public class Hazard : MonoBehaviour {
             Debug.Log("Player entered hazard!");
             PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
             player.transform.position.Set(0, 0, 45);
-            if (Input.GetKeyDown(KeyCode.R))
+            player.Freeze();
+            if (Input.GetKey(KeyCode.R))
             {
                 Debug.Log("R Key Pressed");
                 player.Respawn();

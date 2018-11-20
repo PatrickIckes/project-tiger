@@ -122,10 +122,12 @@ public class PlayerCharacter : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    public void Freeze()
+    {
+        
+    }
     public void Respawn()
     {
-
-
         if(currentCheckpoint == null)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else
@@ -133,7 +135,6 @@ public class PlayerCharacter : MonoBehaviour {
             rb2d.velocity = Vector2.zero;
             transform.position = currentCheckpoint.transform.position;
         }
-
     }
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
@@ -143,7 +144,6 @@ public class PlayerCharacter : MonoBehaviour {
         currentCheckpoint = newCurrentCheckpoint;
         currentCheckpoint.SetIsActivated(true);
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Collectable"))
