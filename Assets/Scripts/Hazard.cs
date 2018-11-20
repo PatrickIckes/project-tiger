@@ -11,12 +11,17 @@ public class Hazard : MonoBehaviour {
         {
             Debug.Log("Player entered hazard!");
             PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
-            player.Respawn();
+            player.transform.position.Set(0, 0, 45);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Debug.Log("R Key Pressed");
+                player.Respawn();
+            }
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else
-        {
-            Debug.Log("Something other than the player entered the Hazard!");
-        }
+        //else
+        //{
+        //    Debug.Log("Something other than the player entered the Hazard!");
+        //}
     }
 }
