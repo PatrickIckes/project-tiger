@@ -21,10 +21,12 @@ public class PlayerCharacter : MonoBehaviour {
     private Checkpoint currentCheckpoint;
     private float horizontalInput;
     private bool isOnGround;
+    private bool isDead = false;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
     private int scoreCount;
     public Text countText;
+    public Text deathText;
 
     Animator anim;
     bool grounded = false;
@@ -49,6 +51,7 @@ public class PlayerCharacter : MonoBehaviour {
         anim = GetComponent<Animator>();
         scoreCount = 0;
         SetScoreCount();
+        
     }
 
     // Update is called once per frame
@@ -69,6 +72,8 @@ public class PlayerCharacter : MonoBehaviour {
         {
             anim.SetBool("Ground", false);
         }
+
+
     }
     private void FixedUpdate()
     {
@@ -79,6 +84,8 @@ public class PlayerCharacter : MonoBehaviour {
         anim.SetBool("Ground", isOnGround);
 
         anim.SetFloat("vSpeed", rb2d.velocity.y);
+
+
     }
 
     private void UpdatePhysicsMaterial()
@@ -108,8 +115,6 @@ public class PlayerCharacter : MonoBehaviour {
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-
-
     }
     private void Move()
     {
@@ -125,23 +130,27 @@ public class PlayerCharacter : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    public void Freeze()
-    {
-        
-    }
+    //public void Die()
+    //{
+    //    isDead = true;
+    //    GameObject.Destroy(this.gameObject);
+    //}
     public void Respawn()
     {
-        if(currentCheckpoint == null)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else
-        {
-            rb2d.velocity = Vector2.zero;
-            transform.position = currentCheckpoint.transform.position;
-        }
+        this.gameObject.SetActive(true);
+        deathText.text = " ";
+            if (currentCheckpoint == null)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            else
+            {
+                rb2d.velocity = Vector2.zero;
+                transform.position = currentCheckpoint.transform.position;
+            }
     }
     private void SetScoreCount()
     {
         countText.text = "Count: " + scoreCount.ToString();
+        deathText.text = " ";
     }
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
@@ -158,6 +167,22 @@ public class PlayerCharacter : MonoBehaviour {
             other.gameObject.SetActive(false);
             scoreCount = scoreCount + 1;
             SetScoreCount();
+        }
+
+        if (other.gameObject.CompareTag("Hazard"))
+        {
+            //Die();
+            isDead = true;
+            if (isDead == true)
+            {
+                this.gameObject.SetActive(false);
+                deathText.text = "Press R to respawn";
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Respawn();
+                }
+                
+            }
         }
     }
 }

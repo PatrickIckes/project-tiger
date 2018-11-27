@@ -13,11 +13,6 @@ public class Hazard : MonoBehaviour
             Debug.Log("Player entered hazard!");
             PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
             player.transform.position.Set(0, 0, 45);
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("F Key Pressed");
-            }
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         //else
