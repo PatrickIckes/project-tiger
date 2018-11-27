@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour {
@@ -23,6 +24,7 @@ public class PlayerCharacter : MonoBehaviour {
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
     private int scoreCount;
+    public Text countText;
 
     Animator anim;
     bool grounded = false;
@@ -46,6 +48,7 @@ public class PlayerCharacter : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         scoreCount = 0;
+        SetScoreCount();
     }
 
     // Update is called once per frame
@@ -136,6 +139,10 @@ public class PlayerCharacter : MonoBehaviour {
             transform.position = currentCheckpoint.transform.position;
         }
     }
+    private void SetScoreCount()
+    {
+        countText.text = "Count: " + scoreCount.ToString();
+    }
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
         if(currentCheckpoint != null)
@@ -150,6 +157,7 @@ public class PlayerCharacter : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             scoreCount = scoreCount + 1;
+            SetScoreCount();
         }
     }
 }

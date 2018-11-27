@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905633699981002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.22, y: -0.28, z: 0}
+  m_LocalPosition: {x: -8.22, y: -0.64, z: 0}
   m_LocalScale: {x: 4.2054634, y: 4.2054563, z: 4.2054563}
   m_Children: []
   m_Father: {fileID: 0}
@@ -157,6 +157,7 @@ MonoBehaviour:
   playerStoppingPhysicsMaterial: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0,
     type: 2}
   groundDetectTrigger: {fileID: 58004382008688154}
+  countText: {fileID: 0}
   jumpForce: 13
   accelerationforce: 40
   maxSpeed: 5
@@ -207,7 +208,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 779691593
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bfd50b3fb321eb645940f01f7d32d3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

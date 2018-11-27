@@ -7,16 +7,16 @@ public class Hazard : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player entered hazard!");
             PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
             player.transform.position.Set(0, 0, 45);
-            player.Freeze();
-            if (Input.GetKey(KeyCode.R))
+
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("R Key Pressed");
-                player.Respawn();
+                Debug.Log("F Key Pressed");
             }
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
