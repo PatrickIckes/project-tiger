@@ -53,7 +53,6 @@ public class PlayerCharacter : MonoBehaviour {
         SetScoreCount();
         
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -72,8 +71,6 @@ public class PlayerCharacter : MonoBehaviour {
         {
             anim.SetBool("Ground", false);
         }
-
-
     }
     private void FixedUpdate()
     {
@@ -82,10 +79,7 @@ public class PlayerCharacter : MonoBehaviour {
 
         //grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         anim.SetBool("Ground", isOnGround);
-
         anim.SetFloat("vSpeed", rb2d.velocity.y);
-
-
     }
 
     private void UpdatePhysicsMaterial()
@@ -152,6 +146,18 @@ public class PlayerCharacter : MonoBehaviour {
         countText.text = "Count: " + scoreCount.ToString();
         deathText.text = " ";
     }
+    private void DeathReset()
+    {
+        if (isDead == true)
+        {
+            this.gameObject.SetActive(false);
+            deathText.text = "Press R to respawn";
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Respawn();
+            }
+        }
+    }
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
         if(currentCheckpoint != null)
@@ -173,16 +179,16 @@ public class PlayerCharacter : MonoBehaviour {
         {
             //Die();
             isDead = true;
-            if (isDead == true)
-            {
-                this.gameObject.SetActive(false);
-                deathText.text = "Press R to respawn";
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    Respawn();
-                }
-                
-            }
+            DeathReset();
+            //if (isDead == true)
+            //{
+            //    this.gameObject.SetActive(false);
+            //    deathText.text = "Press R to respawn";
+            //    if (Input.GetKeyDown(KeyCode.R))
+            //    {
+            //        Respawn();
+            //    }
+            //}
         }
     }
 }
