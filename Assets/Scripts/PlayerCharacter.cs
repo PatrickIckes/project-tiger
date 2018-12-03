@@ -21,7 +21,7 @@ public class PlayerCharacter : MonoBehaviour {
     private Checkpoint currentCheckpoint;
     private float horizontalInput;
     private bool isOnGround;
-    private bool isDead = false;
+    public bool isDead = false;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
     private int scoreCount;
@@ -59,6 +59,7 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
+        
 
         if (horizontalInput > 0 && !facingRight)
             Flip();
@@ -71,6 +72,8 @@ public class PlayerCharacter : MonoBehaviour {
         {
             anim.SetBool("Ground", false);
         }
+
+
     }
     private void FixedUpdate()
     {
@@ -80,6 +83,20 @@ public class PlayerCharacter : MonoBehaviour {
         //grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("vSpeed", rb2d.velocity.y);
+
+        if (isDead == true)
+        {
+            this.gameObject.SetActive(false);
+            deathText.text = "Press R to respawn";
+
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                isDead = false;
+                Debug.Log("R key pressed");
+                this.gameObject.SetActive(true);
+                Respawn();
+            }
+        }
     }
 
     private void UpdatePhysicsMaterial()
@@ -131,7 +148,6 @@ public class PlayerCharacter : MonoBehaviour {
     //}
     public void Respawn()
     {
-        this.gameObject.SetActive(true);
         deathText.text = " ";
             if (currentCheckpoint == null)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -179,7 +195,7 @@ public class PlayerCharacter : MonoBehaviour {
         {
             //Die();
             isDead = true;
-            DeathReset();
+            
             //if (isDead == true)
             //{
             //    this.gameObject.SetActive(false);
