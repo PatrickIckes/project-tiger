@@ -22,6 +22,7 @@ public class PlayerCharacter : MonoBehaviour {
     private float horizontalInput;
     private bool isOnGround;
     public bool isDead = false;
+    public bool hasRing = false;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
     private int scoreCount;
@@ -138,6 +139,7 @@ public class PlayerCharacter : MonoBehaviour {
 
                 Time.timeScale = 0;
                 deathText.text = "Press R to respawn";
+                //rb2d.
 
                 if (Input.GetKeyUp(KeyCode.R))
                 {
@@ -179,13 +181,22 @@ public class PlayerCharacter : MonoBehaviour {
         if (other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.SetActive(false);
-            scoreCount = scoreCount + 1;
+            scoreCount++;
             SetScoreCount();
         }
 
         if (other.gameObject.CompareTag("Hazard"))
         {
             isDead = true;
+        }
+
+        if (other.gameObject.CompareTag("Ring"))
+        {
+            other.gameObject.SetActive(false);
+            hasRing = true;
+            Debug.Log("Ring!");
+
+            
         }
     }
 }
