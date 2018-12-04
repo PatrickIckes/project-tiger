@@ -1373,7 +1373,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4470412017850354, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.746163
+      value: 7.96
       objectReference: {fileID: 0}
     - target: {fileID: 4470412017850354, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1407,8 +1407,32 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300154, guid: c000232b13ad75d45904926f0e7eb2a1,
+      objectReference: {fileID: 21300356, guid: c000232b13ad75d45904926f0e7eb2a1,
         type: 3}
+    - target: {fileID: 4470412017850354, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.6249785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470412017850354, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.6249783
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470412017850354, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.6249783
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536601039587784, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_Name
+      value: Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536601039587784, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_TagString
+      value: Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536601039587784, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c27c36549b93bbf4083b11fc0f6364b0, type: 2}
   m_IsPrefabParent: 0
