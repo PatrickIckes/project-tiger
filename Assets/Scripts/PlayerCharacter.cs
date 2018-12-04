@@ -59,7 +59,7 @@ public class PlayerCharacter : MonoBehaviour {
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
-        
+        AreTheyDead();
 
         if (horizontalInput > 0 && !facingRight)
             Flip();
@@ -84,19 +84,19 @@ public class PlayerCharacter : MonoBehaviour {
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("vSpeed", rb2d.velocity.y);
 
-        if (isDead == true)
-        {
-            this.gameObject.SetActive(false);
-            deathText.text = "Press R to respawn";
+        //if (isDead == true)
+        //{
+        //    this.gameObject.SetActive(false);
+        //    deathText.text = "Press R to respawn";
 
-            if (Input.GetKeyUp(KeyCode.R))
-            {
-                isDead = false;
-                Debug.Log("R key pressed");
-                this.gameObject.SetActive(true);
-                Respawn();
-            }
-        }
+        //    if (Input.GetKeyUp(KeyCode.R))
+        //    {
+        //        isDead = false;
+        //        Debug.Log("R key pressed");
+        //        this.gameObject.SetActive(true);
+        //        Respawn();
+        //    }
+        //}
     }
 
     private void UpdatePhysicsMaterial()
@@ -141,13 +141,32 @@ public class PlayerCharacter : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    //public void Die()
-    //{
-    //    isDead = true;
-    //    GameObject.Destroy(this.gameObject);
-    //}
+    public void AreTheyDead()
+    {
+        switch (isDead)
+        {
+            case false:
+
+                break;
+
+            case true:
+
+                Time.timeScale = 0;
+                deathText.text = "Press R to respawn";
+
+                if (Input.GetKeyUp(KeyCode.R))
+                {
+                    isDead = false;
+                    Debug.Log("R key pressed");
+                    Time.timeScale = 1;
+                    Respawn();
+                }
+                break;
+        }
+    }
     public void Respawn()
     {
+
         deathText.text = " ";
             if (currentCheckpoint == null)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -162,18 +181,18 @@ public class PlayerCharacter : MonoBehaviour {
         countText.text = "Count: " + scoreCount.ToString();
         deathText.text = " ";
     }
-    private void DeathReset()
-    {
-        if (isDead == true)
-        {
-            this.gameObject.SetActive(false);
-            deathText.text = "Press R to respawn";
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Respawn();
-            }
-        }
-    }
+    //private void DeathReset()
+    //{
+    //    if (isDead == true)
+    //    {
+    //        this.gameObject.SetActive(false);
+    //        deathText.text = "Press R to respawn";
+    //        if (Input.GetKeyDown(KeyCode.R))
+    //        {
+    //            Respawn();
+    //        }
+    //    }
+    //}
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
         if(currentCheckpoint != null)

@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Hazard : MonoBehaviour
 {
-    private bool isDead = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

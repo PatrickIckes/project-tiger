@@ -157,7 +157,9 @@ MonoBehaviour:
   playerStoppingPhysicsMaterial: {fileID: 6200000, guid: 63be096942129f04882c3acd66c0f0a0,
     type: 2}
   groundDetectTrigger: {fileID: 58004382008688154}
+  isDead: 0
   countText: {fileID: 0}
+  deathText: {fileID: 0}
   jumpForce: 13
   accelerationforce: 40
   maxSpeed: 5
