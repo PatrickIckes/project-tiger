@@ -80,23 +80,8 @@ public class PlayerCharacter : MonoBehaviour {
         UpdatePhysicsMaterial();
         Move();
 
-        //grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("vSpeed", rb2d.velocity.y);
-
-        //if (isDead == true)
-        //{
-        //    this.gameObject.SetActive(false);
-        //    deathText.text = "Press R to respawn";
-
-        //    if (Input.GetKeyUp(KeyCode.R))
-        //    {
-        //        isDead = false;
-        //        Debug.Log("R key pressed");
-        //        this.gameObject.SetActive(true);
-        //        Respawn();
-        //    }
-        //}
     }
 
     private void UpdatePhysicsMaterial()
@@ -181,18 +166,6 @@ public class PlayerCharacter : MonoBehaviour {
         countText.text = "Count: " + scoreCount.ToString();
         deathText.text = " ";
     }
-    //private void DeathReset()
-    //{
-    //    if (isDead == true)
-    //    {
-    //        this.gameObject.SetActive(false);
-    //        deathText.text = "Press R to respawn";
-    //        if (Input.GetKeyDown(KeyCode.R))
-    //        {
-    //            Respawn();
-    //        }
-    //    }
-    //}
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
         if(currentCheckpoint != null)
@@ -212,18 +185,7 @@ public class PlayerCharacter : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Hazard"))
         {
-            //Die();
             isDead = true;
-            
-            //if (isDead == true)
-            //{
-            //    this.gameObject.SetActive(false);
-            //    deathText.text = "Press R to respawn";
-            //    if (Input.GetKeyDown(KeyCode.R))
-            //    {
-            //        Respawn();
-            //    }
-            //}
         }
     }
 }
