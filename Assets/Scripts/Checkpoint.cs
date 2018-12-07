@@ -15,6 +15,7 @@ public class Checkpoint : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         checkpointAnim = GetComponent<Animator>();
+        checkpointAnim.SetBool("Fire", false);
     }
     private void Update()
     {
