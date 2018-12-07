@@ -376,10 +376,10 @@ TextureImporter:
       name: spritesheet_32x32_50
       rect:
         serializedVersion: 2
-        x: 64
-        y: 480
-        width: 32
-        height: 32
+        x: 75
+        y: 492
+        width: 12
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

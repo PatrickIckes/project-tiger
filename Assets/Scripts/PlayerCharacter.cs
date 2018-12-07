@@ -28,6 +28,7 @@ public class PlayerCharacter : MonoBehaviour {
     private int scoreCount;
     public Text countText;
     public Text deathText;
+    
 
     Animator anim;
     bool grounded = false;
@@ -137,7 +138,9 @@ public class PlayerCharacter : MonoBehaviour {
 
             case true:
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
+                rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                anim.SetBool("isDead", true);
                 deathText.text = "Press R to respawn";
                 //rb2d.
 
@@ -145,7 +148,8 @@ public class PlayerCharacter : MonoBehaviour {
                 {
                     isDead = false;
                     Debug.Log("R key pressed");
-                    Time.timeScale = 1;
+                    //Time.timeScale = 1;
+                    Unfreeze();
                     Respawn();
                 }
                 break;
@@ -162,6 +166,12 @@ public class PlayerCharacter : MonoBehaviour {
                 rb2d.velocity = Vector2.zero;
                 transform.position = currentCheckpoint.transform.position;
             }
+    }
+    public void Unfreeze()
+    {
+        anim.SetBool("isDead", false);
+        rb2d.constraints = RigidbodyConstraints2D.None;
+        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
     private void SetScoreCount()
     {
