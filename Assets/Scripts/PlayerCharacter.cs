@@ -28,8 +28,10 @@ public class PlayerCharacter : MonoBehaviour {
     private int scoreCount;
     public Text countText;
     public Text deathText;
-    
+    public AudioSource collectableSound;
+    public AudioSource ringSound;
 
+    
     Animator anim;
     bool grounded = false;
     //public Transform groundCheck;
@@ -187,6 +189,7 @@ public class PlayerCharacter : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Collectable"))
         {
+            collectableSound.Play();
             other.gameObject.SetActive(false);
             scoreCount++;
             SetScoreCount();
@@ -199,11 +202,10 @@ public class PlayerCharacter : MonoBehaviour {
 
         if (other.gameObject.CompareTag("Ring"))
         {
+            ringSound.Play();
             other.gameObject.SetActive(false);
             hasRing = true;
             Debug.Log("Ring!");
-
-            
         }
     }
 }
