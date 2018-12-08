@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Hazard : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player entered hazard!");
+            audioSource.Play();
             //PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
             //player.transform.position.Set(0, 0, 45);
             

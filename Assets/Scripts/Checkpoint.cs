@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    //[SerializeField]
-    //private Sprite activatedSprite;
 
     private bool isActivated;
     private SpriteRenderer spriteRenderer;
     Animator checkpointAnim;
+    private AudioSource audioSource;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         checkpointAnim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
         checkpointAnim.SetBool("Fire", false);
     }
     private void Update()
@@ -31,6 +32,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag("Player") && !isActivated)
         {
             Debug.Log("Checkpoint!");
+            audioSource.Play();
             PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
             player.SetCurrentCheckpoint(this);
             //spriteRenderer.sprite = activatedSprite;

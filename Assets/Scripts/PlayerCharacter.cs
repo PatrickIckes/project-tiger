@@ -53,7 +53,6 @@ public class PlayerCharacter : MonoBehaviour {
         anim = GetComponent<Animator>();
         scoreCount = 0;
         SetScoreCount();
-        
     }
     // Update is called once per frame
     void Update()
@@ -138,17 +137,15 @@ public class PlayerCharacter : MonoBehaviour {
 
             case true:
 
-                //Time.timeScale = 0;
+                
                 rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
                 anim.SetBool("isDead", true);
                 deathText.text = "Press R to respawn";
-                //rb2d.
 
                 if (Input.GetKeyUp(KeyCode.R))
                 {
                     isDead = false;
                     Debug.Log("R key pressed");
-                    //Time.timeScale = 1;
                     Unfreeze();
                     Respawn();
                 }
