@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4920924005724480}
   - component: {fileID: 212811519342215094}
-  - component: {fileID: 114659553775408554}
   - component: {fileID: 50708168368707344}
   - component: {fileID: 58704935450702220}
+  - component: {fileID: 114874209090717940}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Ring
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507648456232050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.96, y: -0.57381916, z: 0}
+  m_LocalPosition: {x: 7.51, y: -0.48, z: 0}
   m_LocalScale: {x: 1.6249785, y: 1.6249783, z: 1.6249783}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0.0013532083, y: -0.005413091}
   serializedVersion: 2
   m_Radius: 0.12616819
---- !u!114 &114659553775408554
+--- !u!114 &114874209090717940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1507648456232050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affcb72bc3b27b74cbad636085d2deaf, type: 3}
+  m_Script: {fileID: 11500000, guid: c1efddf9b2418df45967f716670e596d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212811519342215094
