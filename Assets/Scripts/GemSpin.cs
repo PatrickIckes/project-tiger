@@ -15,12 +15,4 @@ public class GemSpin : MonoBehaviour {
     {
         transform.Rotate(new Vector3(0, 135, 0) * Time.deltaTime);
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            audioSource.Play();
-        }
-    }
 }
