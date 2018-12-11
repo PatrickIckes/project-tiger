@@ -34,9 +34,6 @@ public class PlayerCharacter : MonoBehaviour {
     
     Animator anim;
     bool grounded = false;
-    //public Transform groundCheck;
-    //float groundRadius = 0.2f;
-    //public LayerMask whatIsGround;
 
     [SerializeField]
     private float jumpForce = 10;
@@ -56,7 +53,7 @@ public class PlayerCharacter : MonoBehaviour {
         scoreCount = 0;
         SetScoreCount();
     }
-    // Update is called once per frame
+ 
     void Update()
     {
         UpdateIsOnGround();
@@ -101,8 +98,6 @@ public class PlayerCharacter : MonoBehaviour {
     private void UpdateIsOnGround()
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
-        // Debug.Log("IsOnGround?: " + isOnGround);
-
     }
     private void UpdateHorizontalInput()
     {

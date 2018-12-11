@@ -10,18 +10,6 @@ public class Door : MonoBehaviour {
 
     private bool isPlayerInTrigger;
 
-    // Bug: Triggers door twice due to double colliders on Player
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        if (Input.GetButtonDown("Activate"))
-    //        {
-    //            Debug.Log("Player activated door");
-    //        }
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

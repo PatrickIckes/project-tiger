@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blockage : MonoBehaviour {
-
+public class Blockage : MonoBehaviour
+{
     [SerializeField]
     private PlayerCharacter player;
 

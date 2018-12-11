@@ -19,14 +19,6 @@ public class Hazard : MonoBehaviour
         {
             Debug.Log("Player entered hazard!");
             audioSource.Play();
-            //PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
-            //player.transform.position.Set(0, 0, 45);
-            
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        //else
-        //{
-        //    Debug.Log("Something other than the player entered the Hazard!");
-        //}
     }
 }
