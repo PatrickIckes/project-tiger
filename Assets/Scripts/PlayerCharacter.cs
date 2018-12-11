@@ -25,7 +25,7 @@ public class PlayerCharacter : MonoBehaviour {
     public bool hasRing = false;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
-    private int scoreCount;
+    public int scoreCount;
     public Text countText;
     public Text deathText;
     public AudioSource collectableSound;
@@ -50,7 +50,9 @@ public class PlayerCharacter : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
-        scoreCount = 0;
+        scoreCount = PlayerPrefs.GetInt("Score");
+
+
         SetScoreCount();
     }
  
