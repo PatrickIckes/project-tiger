@@ -25,7 +25,7 @@ public class PlayerCharacter : MonoBehaviour {
     public bool hasRing = false;
     private Collider2D[] groundHitDetectionResults = new Collider2D[32];
     bool facingRight = true;
-    public int scoreCount;
+    public int scoreCount = 0;
     public Text countText;
     public Text deathText;
     public AudioSource collectableSound;
@@ -83,7 +83,6 @@ public class PlayerCharacter : MonoBehaviour {
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("vSpeed", rb2d.velocity.y);
     }
-
     private void UpdatePhysicsMaterial()
     {
         if(Mathf.Abs(horizontalInput) > 0)
@@ -133,8 +132,6 @@ public class PlayerCharacter : MonoBehaviour {
                 break;
 
             case true:
-
-                
                 rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
                 anim.SetBool("isDead", true);
                 deathText.text = "Press R to respawn";
@@ -169,7 +166,6 @@ public class PlayerCharacter : MonoBehaviour {
     }
     private void SetScoreCount()
     {
-        
         countText.text = "Count: " + scoreCount.ToString();
         deathText.text = " ";
     }
