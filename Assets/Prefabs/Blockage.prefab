@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114358699847143282}
   m_Layer: 0
   m_Name: Blockage
-  m_TagString: Untagged
+  m_TagString: Blockage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368919484872262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.13, y: -0.52, z: 0}
+  m_LocalPosition: {x: 41.11229, y: -0.47043288, z: 0}
   m_LocalScale: {x: 0.93454033, y: 1.4952638, z: 0.9345398}
   m_Children: []
   m_Father: {fileID: 0}

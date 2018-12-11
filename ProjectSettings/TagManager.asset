@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Hazard
   - Ring
+  - Blockage
   layers:
   - Default
   - TransparentFX

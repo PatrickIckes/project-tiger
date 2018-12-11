@@ -5,13 +5,23 @@ using UnityEngine;
 public class Blockage : MonoBehaviour
 {
     [SerializeField]
-    private PlayerCharacter player;
+    PlayerCharacter player;
 
-    void Update ()
+    private void Start()
+    {
+        player = GameObject.Find("Player Character").GetComponent<PlayerCharacter>();
+    }
+
+    private void Update ()
+    {
+        CheckRing();
+	}
+
+    public void CheckRing()
     {
         if (player.hasRing == true)
         {
             this.gameObject.SetActive(false);
         }
-	}
+    }
 }
