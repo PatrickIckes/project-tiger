@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72497b40b20d72428d01e4cf95466be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: Level3
 --- !u!212 &212150039065549850
 SpriteRenderer:
   m_ObjectHideFlags: 1
