@@ -51,8 +51,6 @@ public class PlayerCharacter : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         scoreCount = PlayerPrefs.GetInt("Score");
-
-
         SetScoreCount();
     }
  
@@ -171,6 +169,7 @@ public class PlayerCharacter : MonoBehaviour {
     }
     private void SetScoreCount()
     {
+        
         countText.text = "Count: " + scoreCount.ToString();
         deathText.text = " ";
     }
